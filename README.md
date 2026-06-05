@@ -2,77 +2,78 @@
 
 **Excel · Power Pivot · DAX · Interactive Dashboard**
 
-A logistics performance analysis built entirely in Microsoft Excel using Power Pivot. Investigates 2,000 shipment records from 2023 to identify delivery failures, carrier inefficiencies, and cost savings opportunities — then delivers an executive-ready dashboard and recommendation report.
-
-Built as part of the **Data with Danny** cohort curriculum.
+A Data with Danny cohort project. You are a Data Analyst at FastShip Logistics. You have 2,000 shipment records from 2023 and one job — figure out what is broken and how to fix it.
 
 ---
 
-## The Business Scenario
+## The Scenario
 
-FastShip Logistics operates 10 warehouses across the United States and partners with 7 carriers — UPS, FedEx, DHL, USPS, Amazon Logistics, OnTrac, and LaserShip.
+FastShip Logistics operates 10 warehouses across the United States and partners with 7 carriers: UPS, FedEx, DHL, USPS, Amazon Logistics, OnTrac, and LaserShip.
 
-Operations Manager Sarah Chen has flagged inconsistent delivery performance and rising costs. The executive team needs answers on four fronts: rising shipping costs, delivery delays, lost packages, and operational efficiency.
+Operations Manager **Sarah Chen** has flagged inconsistent delivery performance and rising costs. The executive team needs answers on four fronts:
 
-Your job: turn 2,000 raw shipment records into a dashboard leadership can act on.
+- Are we spending too much on certain routes or carriers?
+- Which carriers and warehouses are causing delays?
+- Why are packages getting lost or returned?
+- Can we optimise our carrier partnerships?
+
+You have been given `Shipment_Data.xlsx` containing 2,000 shipment records. Your job is to build a Power Pivot model, write DAX measures, and deliver an interactive dashboard that the operations team can use to make decisions.
 
 ---
 
-## What This Project Covers
+## Your Deliverables
 
-### Data Model
-- Power Pivot data model with imported shipment data
-- Calendar dimension table for time-based analysis
-- Relationships between fact and dimension tables
+### 1. Power Pivot Data Model
+- Import the shipment data into Power Pivot
+- Build a Calendar table for time-based analysis
+- Create relationships between tables
 
-### DAX Measures (15+)
-- Total shipping cost and cost per shipment
-- On-time delivery rate and problem rate
+### 2. DAX Measures (10–15)
+- Total cost, average cost per shipment
+- On-time delivery rate
+- Problem rate (delayed + lost + returned)
 - Cost per mile by carrier
 - Average transit time by warehouse and carrier
-- Lost and returned shipment counts
 
-### Dashboard (2 pages)
-- **Executive Summary** — headline KPIs, monthly trends, overall health
-- **Carrier Performance** — side-by-side cost and delivery comparison
+### 3. Interactive Dashboard (1–2 pages)
+- **Executive Summary** — headline KPIs and monthly trends
+- **Carrier Performance** — cost and delivery comparison across all carriers
 - **Warehouse Analysis** — problem rate and on-time rate by location
-- **Problem Tracking** — delays, losses, and returns broken down by carrier
+- **Problem Tracking** — delays, losses, and returns broken down
 
-### Insights Report
-- Answers to all 19 business questions from the project brief
-- 3 actionable recommendations with projected financial impact
-
----
-
-## Key Findings
-
-| Metric | Value | Benchmark |
-|--------|-------|-----------|
-| On-Time Delivery | 82.4% | ❌ Below 85% |
-| Problem Rate | 13.8% | ❌ Above 10% |
-| Total Shipping Cost | $401,912 | — |
-| Average Transit Time | 4.18 days | — |
-| Worst Carrier | Amazon Logistics (17.9% problem rate) | — |
-| Worst Warehouse | San Francisco (17.2% problem rate) | — |
-| Potential Annual Savings | $31,200 | — |
+### 4. Insights Report
+Answer all 19 business questions from the project brief and provide at least 3 actionable recommendations with projected financial impact.
 
 ---
 
-## Top 3 Recommendations
+## The 19 Business Questions
 
-**1. Reduce Amazon Logistics volume by 50%**
-Shift to UPS and FedEx for affected routes.
-Impact: Problem rate drops from 13.8% → 11.5%. Annual savings: $2,700.
+**Cost Analysis**
+1. What is the total shipping cost for 2023?
+2. What is the average cost per shipment?
+3. Which carrier is most expensive on average?
+4. Which warehouse has the highest total shipping costs?
+5. What is the cost per mile for each carrier?
 
-**2. Route all shipments under 500 miles to USPS**
-USPS costs $0.14/mile vs the current $0.16/mile average across 600 affected shipments.
-Impact: Annual savings of $24,000. ROI: 380%.
+**Delivery Performance**
+6. What percentage of shipments were delivered on time?
+7. Which carrier has the best delivery success rate?
+8. Which carrier has the worst performance?
+9. What is the average transit time across all shipments?
+10. Which warehouse has the longest average transit times?
 
-**3. Replicate the NYC warehouse playbook at San Francisco**
-NYC operates at 88.8% on-time and 8.2% problem rate. Study and apply their processes to SF.
-Impact: On-time delivery improves to 86%, problem rate drops to 11%, 112 fewer problem shipments per year.
+**Operational Insights**
+11. What is the total shipped weight for the year?
+12. What is the average package weight?
+13. Which destination city receives the most shipments?
+14. Which carrier handles the most volume?
+15. Is there a relationship between distance and transit time?
 
-**Total investment: $14,500 → Annual savings: $31,200 → 3-year savings: $79,100**
+**Problem Areas**
+16. How many shipments were lost or returned?
+17. What percentage of shipments have issues?
+18. Which carrier has the most lost packages?
+19. Which warehouse has the highest problem rate?
 
 ---
 
@@ -96,55 +97,65 @@ Impact: On-time delivery improves to 86%, problem rate drops to 11%, 112 fewer p
 
 ---
 
-## Tools Used
-
-- Microsoft Excel
-- Power Pivot (Data Model)
-- DAX (calculated measures and columns)
-- Power Query (data cleaning and calendar table)
-- Pivot Tables and Pivot Charts
-- Slicers for interactivity
-
----
-
 ## Repository Structure
 
 ```
 fastship-logistics-excel-analysis/
 │
 ├── Dataset/
-│   └── Shipment_Data.xlsx
+│   └── Shipment_Data.xlsx          ← Start here
+│
+├── Project Brief/
+│   └── FastShip_Project_Brief.pdf  ← Full instructions
 │
 ├── Analysis/
-│   └── FastShip_Analysis.xlsx          # Power Pivot model + dashboard
+│   └── FastShip_Analysis.xlsx      ← Your completed workbook goes here
 │
 ├── Report/
-│   └── FastShip_Executive_Summary.docx # Executive summary with recommendations
+│   └── FastShip_Executive_Summary  ← Your insights report goes here
 │
 └── README.md
 ```
 
 ---
 
-## Skills Demonstrated
+## Success Criteria
 
-- Power Pivot data modelling from raw CSV/Excel data
-- DAX measure writing (SUM, AVERAGE, COUNT, CALCULATE, FILTER, RELATED)
-- Calendar table creation for time intelligence
-- Multi-page interactive dashboard design
-- Business insight generation from operational data
-- Executive communication of analytical findings
+Your project is complete when you can say yes to all of these:
+
+- [ ] Power Pivot data model is built and relationships are correct
+- [ ] All required DAX measures are written and return accurate results
+- [ ] All 19 business questions are answered with data
+- [ ] Dashboard is interactive — slicers filter all visuals
+- [ ] At least 3 recommendations with projected financial impact
+- [ ] A non-technical stakeholder can read your insights report and take action
+
+---
+
+## How to Submit
+
+1. Fork this repo or create your own public repo
+2. Upload your completed Excel file and insights report
+3. Update the README with your name, cohort number, and a screenshot of your dashboard
+4. Share the link in the DwD community
+
+**The goal is not just to complete the project. The goal is to build something you can show a recruiter or client.**
+
+---
+
+## Tools Required
+
+- Microsoft Excel (2016 or later with Power Pivot enabled)
+- Power Pivot add-in (free, built into Excel on Windows)
 
 ---
 
 ## Part of the DwD Curriculum
 
-This project is one of two Excel capstone projects in the **Data with Danny** cohort program.
-
-The program covers Excel, SQL, Python, Power BI, Statistics, Figma, PowerPoint, and AI integration across a structured 4-month curriculum.
+This is one of two Excel projects in the **Data with Danny** cohort program — a structured 4-month curriculum covering Excel, SQL, Python, Power BI, Statistics, and AI integration.
 
 **Cohort 9 starts June 25, 2026** → [nestuge.com/mzlik606d](https://nestuge.com/mzlik606d)
 
 ---
 
-*Built by [Your Name] · Data with Danny Cohort [X] · [Year]*
+*Data with Danny · Excel Project 2 · datawithdany@gmail.com*
